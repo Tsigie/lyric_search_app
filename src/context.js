@@ -38,9 +38,9 @@ export class Provider extends Component {
 
   render() {
     return (
-      <context.Provider value={this.state}>
+      <Context.Provider value={this.state}>
         {this.props.children}
-      </context.Provider>
+      </Context.Provider>
     );
   }
 }

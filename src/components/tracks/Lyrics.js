@@ -21,7 +21,7 @@ class Lyrics extends Component {
         this.setState({ lyrics: res.data.message.body.lyrics });
 
         return axios.get(
-          `https://cros-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.get?track_id=${
+          `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.get?track_id=${
             this.props.match.params.id
         }&apikey=${process.env.REACT_APP_MM_KEY}`
         );
@@ -35,8 +35,8 @@ class Lyrics extends Component {
     const { track, lyrics } = this.state;
 
     if (
-      track === undefind ||
-      lyrics === undefind ||
+      track === undefined ||
+      lyrics === undefined ||
       Object.keys(track).length === 0 ||
       Object.keys(lyrics).length === 0 
     ) {
